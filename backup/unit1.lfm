@@ -1,0 +1,427 @@
+object Form1: TForm1
+  Left = 326
+  Height = 240
+  Top = 231
+  Width = 388
+  Caption = 'Form1'
+  ClientHeight = 220
+  ClientWidth = 388
+  Menu = MainMenu1
+  LCLVersion = '2.0.6.0'
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 160
+    Width = 32
+    Caption = '1'
+    OnClick = ClickBut
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 48
+    Height = 25
+    Top = 160
+    Width = 32
+    Caption = '2'
+    OnClick = ClickBut
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 88
+    Height = 25
+    Top = 160
+    Width = 32
+    Caption = '3'
+    OnClick = ClickBut
+    TabOrder = 2
+  end
+  object Button4: TButton
+    Left = 8
+    Height = 25
+    Top = 128
+    Width = 32
+    Caption = '4'
+    OnClick = ClickBut
+    TabOrder = 3
+  end
+  object Button5: TButton
+    Left = 48
+    Height = 25
+    Top = 128
+    Width = 32
+    Caption = '5'
+    OnClick = ClickBut
+    TabOrder = 4
+  end
+  object Button6: TButton
+    Left = 88
+    Height = 25
+    Top = 128
+    Width = 32
+    Caption = '6'
+    OnClick = ClickBut
+    TabOrder = 5
+  end
+  object Button7: TButton
+    Left = 8
+    Height = 25
+    Top = 96
+    Width = 32
+    Caption = '7'
+    OnClick = ClickBut
+    TabOrder = 6
+  end
+  object Button8: TButton
+    Left = 48
+    Height = 25
+    Top = 96
+    Width = 32
+    Caption = '8'
+    OnClick = ClickBut
+    TabOrder = 7
+  end
+  object Button9: TButton
+    Left = 88
+    Height = 25
+    Top = 96
+    Width = 32
+    Caption = '9'
+    OnClick = ClickBut
+    TabOrder = 8
+  end
+  object Plus: TButton
+    Left = 8
+    Height = 25
+    Top = 64
+    Width = 32
+    Caption = '+'
+    OnClick = ClickZnak
+    TabOrder = 9
+  end
+  object Minus: TButton
+    Left = 48
+    Height = 25
+    Top = 64
+    Width = 32
+    Caption = '-'
+    OnClick = ClickZnak
+    TabOrder = 10
+  end
+  object Umnozh: TButton
+    Left = 88
+    Height = 25
+    Top = 64
+    Width = 32
+    Caption = '*'
+    OnClick = ClickZnak
+    TabOrder = 11
+  end
+  object Delit: TButton
+    Left = 128
+    Height = 25
+    Top = 64
+    Width = 32
+    Caption = '/'
+    OnClick = ClickZnak
+    TabOrder = 12
+  end
+  object Proc: TButton
+    Left = 128
+    Height = 25
+    Top = 96
+    Width = 32
+    Caption = '%'
+    TabOrder = 13
+  end
+  object Kvadr: TButton
+    Left = 128
+    Height = 25
+    Top = 128
+    Width = 32
+    Caption = '^2'
+    OnClick = KvadrClick
+    TabOrder = 14
+  end
+  object But19: TButton
+    Left = 128
+    Height = 25
+    Top = 160
+    Width = 32
+    Caption = 'sqrt'
+    OnClick = But19Click
+    TabOrder = 15
+  end
+  object Edit1: TEdit
+    Left = 8
+    Height = 23
+    Top = 16
+    Width = 152
+    TabOrder = 16
+  end
+  object Button0: TButton
+    Left = 8
+    Height = 25
+    Top = 192
+    Width = 32
+    Caption = '0'
+    OnClick = ClickBut
+    TabOrder = 17
+  end
+  object Button10: TButton
+    Left = 48
+    Height = 25
+    Top = 192
+    Width = 32
+    Caption = ','
+    OnClick = ClickBut
+    TabOrder = 18
+  end
+  object Button11: TButton
+    Left = 88
+    Height = 25
+    Top = 192
+    Width = 32
+    Caption = '<-'
+    OnClick = Button11Click
+    TabOrder = 19
+  end
+  object Button12: TButton
+    Left = 128
+    Height = 25
+    Top = 192
+    Width = 32
+    Caption = 'CE'
+    OnClick = Button12Click
+    TabOrder = 20
+  end
+  object Button13: TButton
+    Left = 168
+    Height = 25
+    Top = 64
+    Width = 32
+    Caption = 'C'
+    OnClick = Button13Click
+    TabOrder = 21
+  end
+  object Button14: TButton
+    Left = 168
+    Height = 25
+    Top = 96
+    Width = 32
+    Caption = '='
+    OnClick = Button14Click
+    TabOrder = 22
+  end
+  object Button15: TButton
+    Left = 168
+    Height = 25
+    Top = 128
+    Width = 32
+    Caption = '^'
+    OnClick = Button15Click
+    TabOrder = 23
+    Visible = False
+  end
+  object Button16: TButton
+    Left = 168
+    Height = 25
+    Top = 160
+    Width = 32
+    Caption = 'ln'
+    OnClick = Button16Click
+    TabOrder = 24
+    Visible = False
+  end
+  object Button17: TButton
+    Left = 168
+    Height = 25
+    Top = 192
+    Width = 32
+    Caption = 'lg'
+    OnClick = Button17Click
+    TabOrder = 25
+    Visible = False
+  end
+  object Button18: TButton
+    Left = 208
+    Height = 25
+    Top = 64
+    Width = 32
+    Caption = 'sin'
+    OnClick = Button18Click
+    TabOrder = 26
+    Visible = False
+  end
+  object Button19: TButton
+    Left = 208
+    Height = 25
+    Top = 96
+    Width = 32
+    Caption = 'cos'
+    OnClick = Button19Click
+    TabOrder = 27
+    Visible = False
+  end
+  object Button20: TButton
+    Left = 208
+    Height = 25
+    Top = 128
+    Width = 32
+    Caption = 'tan'
+    OnClick = Button20Click
+    TabOrder = 28
+    Visible = False
+  end
+  object Button21: TButton
+    Left = 208
+    Height = 25
+    Top = 160
+    Width = 32
+    Caption = 'ctg'
+    OnClick = Button21Click
+    TabOrder = 29
+    Visible = False
+  end
+  object Button22: TButton
+    Left = 208
+    Height = 25
+    Top = 192
+    Width = 32
+    Caption = 'abs'
+    OnClick = Button22Click
+    TabOrder = 30
+    Visible = False
+  end
+  object Button23: TButton
+    Left = 248
+    Height = 25
+    Top = 64
+    Width = 32
+    Caption = 'fac'
+    OnClick = Button23Click
+    TabOrder = 31
+    Visible = False
+  end
+  object Button24: TButton
+    Left = 248
+    Height = 25
+    Top = 96
+    Width = 32
+    Caption = 'BIN'
+    OnClick = Button24Click
+    TabOrder = 32
+    Visible = False
+  end
+  object Button25: TButton
+    Left = 248
+    Height = 25
+    Top = 128
+    Width = 32
+    Caption = '3'
+    OnClick = Button25Click
+    TabOrder = 33
+    Visible = False
+  end
+  object Button26: TButton
+    Left = 248
+    Height = 25
+    Top = 160
+    Width = 32
+    Caption = '4'
+    OnClick = Button26Click
+    TabOrder = 34
+    Visible = False
+  end
+  object Button27: TButton
+    Left = 248
+    Height = 25
+    Top = 192
+    Width = 32
+    Caption = '5'
+    OnClick = Button27Click
+    TabOrder = 35
+    Visible = False
+  end
+  object Button28: TButton
+    Left = 288
+    Height = 25
+    Top = 64
+    Width = 32
+    Caption = '6'
+    OnClick = Button28Click
+    TabOrder = 36
+    Visible = False
+  end
+  object Button29: TButton
+    Left = 288
+    Height = 25
+    Top = 96
+    Width = 32
+    Caption = '7'
+    OnClick = Button29Click
+    TabOrder = 37
+    Visible = False
+  end
+  object Button30: TButton
+    Left = 288
+    Height = 25
+    Top = 128
+    Width = 32
+    Caption = 'OCT'
+    OnClick = Button30Click
+    TabOrder = 38
+    Visible = False
+  end
+  object MainMenu1: TMainMenu
+    left = 264
+    top = 8
+    object Calc: TMenuItem
+      Caption = 'Калькулятор'
+      object Copirovat: TMenuItem
+        Caption = 'Копировать'
+        OnClick = CopirovatClick
+      end
+      object Vstavit: TMenuItem
+        Caption = 'Вставить'
+        OnClick = VstavitClick
+      end
+    end
+    object Mode: TMenuItem
+      Caption = 'Режим'
+      object Base: TMenuItem
+        Caption = 'Базовый'
+        OnClick = BaseClick
+      end
+      object Exten: TMenuItem
+        Caption = 'Расширенный'
+        OnClick = ExtenClick
+      end
+    end
+    object Spravka: TMenuItem
+      Caption = 'Справка'
+      object Spravka1: TMenuItem
+        Caption = 'Справка'
+        OnClick = Spravka1Click
+      end
+      object About: TMenuItem
+        Caption = 'О Программе'
+        OnClick = AboutClick
+      end
+    end
+    object Tema: TMenuItem
+      Caption = 'Темы'
+      object Tema1: TMenuItem
+        Caption = 'Тема 1'
+        OnClick = Tema1Click
+      end
+      object Tema2: TMenuItem
+        Caption = 'Тема 2'
+        OnClick = Tema2Click
+      end
+      object Tema3: TMenuItem
+        Caption = 'Тема 3'
+        OnClick = Tema3Click
+      end
+    end
+  end
+end
