@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 641
+  Left = 485
   Height = 259
-  Top = 324
+  Top = 193
   Width = 326
   Caption = 'Калькулятор'
   ClientHeight = 239
@@ -214,9 +214,9 @@ object Form1: TForm1
     TabOrder = 22
   end
   object Button15: TButton
-    Left = 168
+    Left = 288
     Height = 25
-    Top = 128
+    Top = 160
     Width = 32
     Caption = '^'
     OnClick = Button15Click
@@ -374,9 +374,9 @@ object Form1: TForm1
     Visible = False
   end
   object Image1: TImage
-    Left = 0
+    Left = -2
     Height = 240
-    Top = 216
+    Top = 0
     Width = 328
   end
   object Image2: TImage
@@ -2027,13 +2027,14 @@ object Form1: TForm1
     Stretch = True
   end
   object Button31: TButton
-    Left = 288
+    Left = 168
     Height = 25
-    Top = 160
+    Top = 128
     Width = 32
     Caption = '^x'
     OnClick = Button31Click
     TabOrder = 39
+    Visible = False
   end
   object MainMenu1: TMainMenu
     left = 264
@@ -2090,9 +2091,11 @@ object Form1: TForm1
       Caption = 'Язык'
       object MenuItem2: TMenuItem
         Caption = 'Русский'
+        OnClick = MenuItem2Click
       end
       object MenuItem3: TMenuItem
         Caption = 'Английский'
+        OnClick = MenuItem3Click
       end
     end
   end

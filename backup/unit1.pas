@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls,
-  lclintf, ExtCtrls, Math;
+  lclintf, ExtCtrls, Math, LCLTranslator;
 
 type
 
@@ -121,6 +121,8 @@ type
     procedure Image8Click(Sender: TObject);
     procedure Image9Click(Sender: TObject);
     procedure KvadrClick(Sender: TObject);
+    procedure MenuItem2Click(Sender: TObject);
+    procedure MenuItem3Click(Sender: TObject);
     procedure Spravka1Click(Sender: TObject);
     procedure Tema1Click(Sender: TObject);
     procedure Tema2Click(Sender: TObject);
@@ -210,6 +212,7 @@ begin
   Button28.Visible := true;
   Button29.Visible := true;
   Button30.Visible := true;
+  Button31.Visible := true;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -282,6 +285,18 @@ begin
   a := sqr(a);
   Edit1.Text:=FloatToStr(a);
   a := 0;
+end;
+
+procedure TForm1.MenuItem2Click(Sender: TObject);
+begin
+  SetDefaultLang('ru', 'lang');
+
+end;
+
+procedure TForm1.MenuItem3Click(Sender: TObject);
+begin
+  SetDefaultLang('en', 'lang');
+
 end;
 
 procedure TForm1.Spravka1Click(Sender: TObject);
@@ -408,6 +423,7 @@ begin
   Button27.Visible := false;
   Button28.Visible := false;
   Button29.Visible := false;
+  Button30.Visible := false;
   Button30.Visible := false;
 end;
 
