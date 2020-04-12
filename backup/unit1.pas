@@ -5,7 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls, lclintf;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls,
+  lclintf, ExtCtrls, Math;
 
 type
 
@@ -35,9 +36,24 @@ type
     Button28: TButton;
     Button29: TButton;
     Button30: TButton;
+    Button31: TButton;
     Edit1: TEdit;
     But19: TButton;
+    Image1: TImage;
+    Image10: TImage;
+    Image11: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    Image5: TImage;
+    Image6: TImage;
+    Image7: TImage;
+    Image8: TImage;
+    Image9: TImage;
     Kvadr: TButton;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
     Tema: TMenuItem;
     Tema1: TMenuItem;
     Tema2: TMenuItem;
@@ -87,11 +103,23 @@ type
     procedure Button28Click(Sender: TObject);
     procedure Button29Click(Sender: TObject);
     procedure Button30Click(Sender: TObject);
+    procedure Button31Click(Sender: TObject);
     procedure ClickBut(Sender: TObject);
     procedure ClickZnak(Sender: TObject);
     procedure But19Click(Sender: TObject);
     procedure CopirovatClick(Sender: TObject);
     procedure ExtenClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Image10Click(Sender: TObject);
+    procedure Image11Click(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
+    procedure Image3Click(Sender: TObject);
+    procedure Image4Click(Sender: TObject);
+    procedure Image5Click(Sender: TObject);
+    procedure Image6Click(Sender: TObject);
+    procedure Image7Click(Sender: TObject);
+    procedure Image8Click(Sender: TObject);
+    procedure Image9Click(Sender: TObject);
     procedure KvadrClick(Sender: TObject);
     procedure Spravka1Click(Sender: TObject);
     procedure Tema1Click(Sender: TObject);
@@ -184,6 +212,70 @@ begin
   Button30.Visible := true;
 end;
 
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  Image2.Hide;
+  Image3.Hide;
+  Image4.Hide;
+  Image5.Hide;
+  Image6.Hide;
+  Image7.Hide;
+  Image8.Hide;
+  Image9.Hide;
+  Image10.Hide;
+  Image11.Hide;
+end;
+
+procedure TForm1.Image10Click(Sender: TObject);
+begin
+  Edit1.Text:=Edit1.Text + '8';
+end;
+
+procedure TForm1.Image11Click(Sender: TObject);
+begin
+  Edit1.Text:=Edit1.Text + '9';
+end;
+
+procedure TForm1.Image2Click(Sender: TObject);
+begin
+  Edit1.Text:=Edit1.Text + '0';
+end;
+
+procedure TForm1.Image3Click(Sender: TObject);
+begin
+  Edit1.Text:=Edit1.Text + '1';
+end;
+
+procedure TForm1.Image4Click(Sender: TObject);
+begin
+  Edit1.Text:=Edit1.Text + '2';
+end;
+
+procedure TForm1.Image5Click(Sender: TObject);
+begin
+  Edit1.Text:=Edit1.Text + '3';
+end;
+
+procedure TForm1.Image6Click(Sender: TObject);
+begin
+  Edit1.Text:=Edit1.Text + '4';
+end;
+
+procedure TForm1.Image7Click(Sender: TObject);
+begin
+  Edit1.Text:=Edit1.Text + '5';
+end;
+
+procedure TForm1.Image8Click(Sender: TObject);
+begin
+  Edit1.Text:=Edit1.Text + '6';
+end;
+
+procedure TForm1.Image9Click(Sender: TObject);
+begin
+  Edit1.Text:=Edit1.Text + '7';
+end;
+
 procedure TForm1.KvadrClick(Sender: TObject);
 begin
   a := StrToFloat(Edit1.Text);
@@ -199,17 +291,78 @@ end;
 
 procedure TForm1.Tema1Click(Sender: TObject);
 begin
-  Form1.Color:=clWhite;
+  Image1.Picture.LoadFromFile('images/bg1.jpg');
+  Button0.Show;
+  Button1.Show;
+  Button2.Show;
+  Button3.Show;
+  Button4.Show;
+  Button5.Show;
+  Button6.Show;
+  Button7.Show;
+  Button8.Show;
+  Button9.Show;
+  Image2.Hide;
+  Image3.Hide;
+  Image4.Hide;
+  Image5.Hide;
+  Image6.Hide;
+  Image7.Hide;
+  Image8.Hide;
+  Image9.Hide;
+  Image10.Hide;
+  Image11.Hide;
 end;
 
 procedure TForm1.Tema2Click(Sender: TObject);
 begin
-  Form1.Color:=clGray;
+  Image1.Picture.LoadFromFile('images/bg2.jpg');
+  Button0.Show;
+  Button1.Show;
+  Button2.Show;
+  Button3.Show;
+  Button4.Show;
+  Button5.Show;
+  Button6.Show;
+  Button7.Show;
+  Button8.Show;
+  Button9.Show;
+  Image2.Hide;
+  Image3.Hide;
+  Image4.Hide;
+  Image5.Hide;
+  Image6.Hide;
+  Image7.Hide;
+  Image8.Hide;
+  Image9.Hide;
+  Image10.Hide;
+  Image11.Hide;
 end;
 
 procedure TForm1.Tema3Click(Sender: TObject);
 begin
-  Form1.Color:=clBlue;
+  Image1.Picture.LoadFromFile('images/bg3.jpg');
+  Button0.Hide;
+  Button1.Hide;
+  Button2.Hide;
+  Button3.Hide;
+  Button4.Hide;
+  Button5.Hide;
+  Button6.Hide;
+  Button7.Hide;
+  Button8.Hide;
+  Button9.Hide;
+  Image2.Show;
+  Image3.Show;
+  Image4.Show;
+  Image5.Show;
+  Image6.Show;
+  Image7.Show;
+  Image8.Show;
+  Image9.Show;
+  Image10.Show;
+  Image11.Show;
+
 end;
 
 procedure TForm1.VstavitClick(Sender: TObject);
@@ -280,6 +433,7 @@ begin
   '-' : c := a-b;
   '*' : c := a*b;
   '/' : c := a/b;
+  '^' : c := power(a, b);
   end;
   Edit1.Text:= FloatToStr(c);
 end;
@@ -289,10 +443,9 @@ var x,i,n:real;
 begin
   x := StrToFloat(Edit1.Text);
   //Edit1.Clear;
-  //i := StrToFloat(Edit1.Text);
-  for i := 1 to 4 do
-    x := x * x;
-  Edit1.Text := FloatToStr(x);
+  i := StrToFloat(Edit1.Text);
+  n:=exp(i*ln(x));
+  Edit1.Text := FloatToStr(n);
 end;
 
 procedure TForm1.Button16Click(Sender: TObject);
@@ -416,6 +569,14 @@ var i: integer;
 begin
   i:=StrToInt(Edit1.Text);
   Edit1.Text:=ConvertToCS(i,8);
+end;
+
+procedure TForm1.Button31Click(Sender: TObject);
+begin
+  a := StrToFloat(Edit1.Text);
+  Edit1.Clear;
+
+  znak :='^';
 end;
 
 end.
