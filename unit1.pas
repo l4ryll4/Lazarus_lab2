@@ -183,10 +183,14 @@ end;
 
 procedure TForm1.But19Click(Sender: TObject);
 begin
-  a := StrToFloat(Edit1.Text);
-  a := sqrt(a);
-  Edit1.Text:=FloatToStr(a);
-  a := 0;
+  try
+    a := StrToFloat(Edit1.Text);
+    a := sqrt(a);
+    Edit1.Text:=FloatToStr(a);
+    a := 0;
+    except
+      on e: exception do ShowMessage('Error!');
+    end
 end;
 
 procedure TForm1.CopirovatClick(Sender: TObject);
@@ -442,92 +446,131 @@ end;
 
 procedure TForm1.Button14Click(Sender: TObject);
 begin
-  b := StrToFloat(Edit1.Text);
-  Edit1.Clear;
-  case znak of
-  '+' : c := a+b;
-  '-' : c := a-b;
-  '*' : c := a*b;
-  '/' : c := a/b;
-  '^' : c := power(a, b);
-  end;
-  Edit1.Text:= FloatToStr(c);
+  try
+    b := StrToFloat(Edit1.Text);
+    Edit1.Clear;
+    case znak of
+         '+' : c := a+b;
+         '-' : c := a-b;
+         '*' : c := a*b;
+         '/' : c := a/b;
+         '^' : c := power(a, b);
+    end;
+    Edit1.Text:= FloatToStr(c);
+  except
+      on e: exception do ShowMessage('Error!');
+  end
 end;
 
 procedure TForm1.Button15Click(Sender: TObject);
 var x,i,n:real;
 begin
-  x := StrToFloat(Edit1.Text);
-  //Edit1.Clear;
-  i := StrToFloat(Edit1.Text);
-  n:=exp(i*ln(x));
-  Edit1.Text := FloatToStr(n);
+  try
+    x := StrToFloat(Edit1.Text);
+    i := StrToFloat(Edit1.Text);
+    n:=exp(i*ln(x));
+    Edit1.Text := FloatToStr(n);
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button16Click(Sender: TObject);
 begin
-  a := StrToFloat(Edit1.Text);
-  a := ln(a);
-  Edit1.Text:=FloatToStr(a);
-  a := 0;
+  try
+    a := StrToFloat(Edit1.Text);
+    a := ln(a);
+    Edit1.Text:=FloatToStr(a);
+    a := 0;
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button17Click(Sender: TObject);
 begin
-  a := StrToFloat(Edit1.Text);
-  a := ln(a)/ln(10);
-  Edit1.Text:=FloatToStr(a);
-  a := 0;
+  try
+    a := StrToFloat(Edit1.Text);
+    a := ln(a)/ln(10);
+    Edit1.Text:=FloatToStr(a);
+    a := 0;
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button18Click(Sender: TObject);
 begin
-  a := StrToFloat(Edit1.Text);
-  a := sin(a);
-  Edit1.Text:=FloatToStr(a);
-  a := 0;
+  try
+    a := StrToFloat(Edit1.Text);
+    a := sin(a);
+    Edit1.Text:=FloatToStr(a);
+    a := 0;
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button19Click(Sender: TObject);
 begin
-  a := StrToFloat(Edit1.Text);
-  a := cos(a);
-  Edit1.Text:=FloatToStr(a);
-  a := 0;
+  try
+    a := StrToFloat(Edit1.Text);
+    a := cos(a);
+    Edit1.Text:=FloatToStr(a);
+    a := 0;
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button20Click(Sender: TObject);
 begin
-  a := StrToFloat(Edit1.Text);
-  a := sin(a)/cos(a);
-  Edit1.Text:=FloatToStr(a);
-  a := 0;
+  try
+    a := StrToFloat(Edit1.Text);
+    a := sin(a)/cos(a);
+    Edit1.Text:=FloatToStr(a);
+    a := 0;
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button21Click(Sender: TObject);
 begin
-  a := StrToFloat(Edit1.Text);
-  a := cos(a)/sin(a);
-  Edit1.Text:=FloatToStr(a);
-  a := 0;
+  try
+    a := StrToFloat(Edit1.Text);
+    a := cos(a)/sin(a);
+    Edit1.Text:=FloatToStr(a);
+    a := 0;
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button22Click(Sender: TObject);
 begin
-  a := StrToFloat(Edit1.Text);
-  a := abs(a);
-  Edit1.Text:=FloatToStr(a);
-  a := 0;
+  try
+    a := StrToFloat(Edit1.Text);
+    a := abs(a);
+    Edit1.Text:=FloatToStr(a);
+    a := 0;
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button23Click(Sender: TObject);
 var n,i,s: integer;
 begin
-  n := StrToInt(Edit1.Text);
-  s := 1;
-  for i := 1 to n do
-   s := s*i;
-  Edit1.Text := IntToStr(s);
+  try
+    n := StrToInt(Edit1.Text);
+    s := 1;
+    for i := 1 to n do
+     s := s*i;
+    Edit1.Text := IntToStr(s);
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button24Click(Sender: TObject);
@@ -535,64 +578,95 @@ var
   n,i: integer;
   s: string;
 begin
-  s:='';
-  i:=StrToInt(Edit1.Text);
-  for n:=32 downto 1 do begin
-    if (i and $80000000)=$80000000 then s:=s+'1'
-    else if Length(s)>0 then s:=s+'0';
-    i:=i<<1;
+  try
+    s:='';
+    i:=StrToInt(Edit1.Text);
+    for n:=32 downto 1 do begin
+      if (i and $80000000)=$80000000 then s:=s+'1'
+      else if Length(s)>0 then s:=s+'0';
+      i:=i<<1;
+    end;
+    Edit1.Text:=s;
+  except
+      on e: exception do ShowMessage('Error!');
   end;
-  Edit1.Text:=s;
 end;
 
 procedure TForm1.Button25Click(Sender: TObject);
 var i: integer;
 begin
-  i:=StrToInt(Edit1.Text);
-  Edit1.Text:=ConvertToCS(i,3);
+  try
+    i:=StrToInt(Edit1.Text);
+    Edit1.Text:=ConvertToCS(i,3);
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button26Click(Sender: TObject);
 var i: integer;
 begin
-  i:=StrToInt(Edit1.Text);
-  Edit1.Text:=ConvertToCS(i,4);
+  try
+    i:=StrToInt(Edit1.Text);
+    Edit1.Text:=ConvertToCS(i,4);
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button27Click(Sender: TObject);
 var i: integer;
 begin
-  i:=StrToInt(Edit1.Text);
-  Edit1.Text:=ConvertToCS(i,5);
+  try
+    i:=StrToInt(Edit1.Text);
+    Edit1.Text:=ConvertToCS(i,5);
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button28Click(Sender: TObject);
 var i: integer;
 begin
-  i:=StrToInt(Edit1.Text);
-  Edit1.Text:=ConvertToCS(i,6);
+  try
+    i:=StrToInt(Edit1.Text);
+    Edit1.Text:=ConvertToCS(i,6);
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button29Click(Sender: TObject);
 var i: integer;
 begin
-  i:=StrToInt(Edit1.Text);
-  Edit1.Text:=ConvertToCS(i,7);
+  try
+    i:=StrToInt(Edit1.Text);
+    Edit1.Text:=ConvertToCS(i,7);
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button30Click(Sender: TObject);
 var i: integer;
 begin
-  i:=StrToInt(Edit1.Text);
-  Edit1.Text:=ConvertToCS(i,8);
+  try
+    i:=StrToInt(Edit1.Text);
+    Edit1.Text:=ConvertToCS(i,8);
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button31Click(Sender: TObject);
 begin
-  a := StrToFloat(Edit1.Text);
-  Edit1.Clear;
-
-  znak :='^';
+  try
+    a := StrToFloat(Edit1.Text);
+    Edit1.Clear;
+    znak :='^';
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 end.

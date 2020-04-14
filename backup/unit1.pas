@@ -140,7 +140,7 @@ var
   znak : String;
 
 implementation
-uses Unit2;
+uses Unit2, Unit3;
 
 {$R *.lfm}
 function ItoS(val:integer):string;
@@ -183,10 +183,14 @@ end;
 
 procedure TForm1.But19Click(Sender: TObject);
 begin
-  a := StrToFloat(Edit1.Text);
-  a := sqrt(a);
-  Edit1.Text:=FloatToStr(a);
-  a := 0;
+  try
+    a := StrToFloat(Edit1.Text);
+    a := sqrt(a);
+    Edit1.Text:=FloatToStr(a);
+    a := 0;
+    except
+      on e: exception do ShowMessage('Error!');
+    end
 end;
 
 procedure TForm1.CopirovatClick(Sender: TObject);
@@ -301,7 +305,7 @@ end;
 
 procedure TForm1.Spravka1Click(Sender: TObject);
 begin
-  OpenURL('http:\\cyberforum.ru');
+  Form3.Show;
 end;
 
 procedure TForm1.Tema1Click(Sender: TObject);
@@ -442,26 +446,34 @@ end;
 
 procedure TForm1.Button14Click(Sender: TObject);
 begin
-  b := StrToFloat(Edit1.Text);
-  Edit1.Clear;
-  case znak of
-  '+' : c := a+b;
-  '-' : c := a-b;
-  '*' : c := a*b;
-  '/' : c := a/b;
-  '^' : c := power(a, b);
-  end;
-  Edit1.Text:= FloatToStr(c);
+  try
+    b := StrToFloat(Edit1.Text);
+    Edit1.Clear;
+    case znak of
+         '+' : c := a+b;
+         '-' : c := a-b;
+         '*' : c := a*b;
+         '/' : c := a/b;
+         '^' : c := power(a, b);
+    end;
+    Edit1.Text:= FloatToStr(c);
+  except
+      on e: exception do ShowMessage('Error!');
+  end
 end;
 
 procedure TForm1.Button15Click(Sender: TObject);
 var x,i,n:real;
 begin
-  x := StrToFloat(Edit1.Text);
-  //Edit1.Clear;
-  i := StrToFloat(Edit1.Text);
-  n:=exp(i*ln(x));
-  Edit1.Text := FloatToStr(n);
+  try
+    x := StrToFloat(Edit1.Text);
+    //Edit1.Clear;
+    i := StrToFloat(Edit1.Text);
+    n:=exp(i*ln(x));
+    Edit1.Text := FloatToStr(n);
+  except
+      on e: exception do ShowMessage('Error!');
+  end;
 end;
 
 procedure TForm1.Button16Click(Sender: TObject);
